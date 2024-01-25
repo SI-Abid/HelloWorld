@@ -1,0 +1,4 @@
+org/coder_cat/helloworld/listeners/PlayerJoinListener.class
+org/coder_cat/helloworld/commands/RandomTeleport.class
+org/coder_cat/helloworld/listeners/PlayerConsumeListener.class
+org/coder_cat/helloworld/HelloWorld.class
