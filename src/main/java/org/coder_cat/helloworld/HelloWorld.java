@@ -1,43 +1,62 @@
 package org.coder_cat.helloworld;
 
+import org.bukkit.Material;
+import org.bukkit.NamespacedKey;
+import org.bukkit.inventory.ItemStack;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.coder_cat.helloworld.commands.RandomTeleport;
-import org.coder_cat.helloworld.listeners.PlayerConsumeListener;
-import org.coder_cat.helloworld.listeners.PlayerJoinListener;
+import org.coder_cat.helloworld.items.HeartCake;
 
 import io.github.thebusybiscuit.slimefun4.api.SlimefunAddon;
-import io.github.thebusybiscuit.slimefun4.libraries.dough.config.Config;
+import io.github.thebusybiscuit.slimefun4.api.items.ItemGroup;
+import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItemStack;
+import io.github.thebusybiscuit.slimefun4.api.recipes.RecipeType;
+import io.github.thebusybiscuit.slimefun4.api.researches.Research;
+import io.github.thebusybiscuit.slimefun4.libraries.dough.items.CustomItemStack;
 
 public final class HelloWorld extends JavaPlugin implements SlimefunAddon {
 
     @Override
     public void onEnable() {
-        // Plugin startup logic
-        getLogger().info("HelloWorld has been enabled");
-        Config config = new Config(this);
 
-        // Commands
-        this.getCommand("rtp").setExecutor(new RandomTeleport());
+        getCommand("rtp").setExecutor(new RandomTeleport());
 
-        // Event Listeners
-        getServer().getPluginManager().registerEvents(new PlayerJoinListener(), this);
-        getServer().getPluginManager().registerEvents(new PlayerConsumeListener(), this);
+        NamespacedKey categoryId = new NamespacedKey(this, "super_food");
+        CustomItemStack categoryItem = new CustomItemStack(Material.CAKE, "&4Super Food");
 
+        ItemGroup itemGroup = new ItemGroup(categoryId, categoryItem);
+
+        SlimefunItemStack itemStack = new SlimefunItemStack("HEART_CAKE", Material.CAKE, "&aHeart Cake",
+                "&7Gives you extra heart");
+        ItemStack[] recipe = {
+                new ItemStack(Material.EMERALD), new ItemStack(Material.CAKE), new ItemStack(Material.EMERALD),
+                new ItemStack(Material.DIAMOND_BLOCK), new ItemStack(Material.TOTEM_OF_UNDYING),
+                new ItemStack(Material.DIAMOND_BLOCK),
+                new ItemStack(Material.EMERALD), new ItemStack(Material.CAKE), new ItemStack(Material.EMERALD)
+        };
+
+        HeartCake cake = new HeartCake(itemGroup, itemStack, RecipeType.MAGIC_WORKBENCH, recipe);
+        cake.register(this);
+
+        NamespacedKey researchKey = new NamespacedKey(this, "heart_cake");
+        Research research = new Research(researchKey, 123, "Very Expensive way to get Immortality", 10);
+        research.addItems(cake);
+
+        research.register();
     }
 
     @Override
     public void onDisable() {
-        // Plugin shutdown logic
-        getLogger().info("HelloWorld has been disabled");
+        // Logic for disabling the plugin...
     }
 
     @Override
-	public JavaPlugin getJavaPlugin() {
-		return this;
-	}
-	
-	@Override
-	public String getBugTrackerURL() {
-		return "https://github.com/SI-Abid/HelloWorld/issues";
-	}
+    public JavaPlugin getJavaPlugin() {
+        return this;
+    }
+
+    @Override
+    public String getBugTrackerURL() {
+        return null;
+    }
 }
