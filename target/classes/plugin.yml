@@ -1,5 +1,5 @@
 name: SuperFood
-version: '${project.version}'
+version: '1.0-SNAPSHOT'
 main: org.coder_cat.super_food.SuperFood
 api-version: '1.20'
 
