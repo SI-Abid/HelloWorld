@@ -1,6 +1,11 @@
 name: SuperFood
 version: '1.0-SNAPSHOT'
-main: org.coder_cat.super_food.SuperFood
+author: Coder_Cat
+description: A generic Slimefun4-Addon
+website: https://github.com/SI-Abid/SuperFood
+
+main: me.coder_cat.super_food.SuperFood
+depend: [Slimefun]
 api-version: '1.20'
 
 commands:

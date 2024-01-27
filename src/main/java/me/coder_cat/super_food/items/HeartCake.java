@@ -1,4 +1,4 @@
-package org.coder_cat.super_food.items;
+package me.coder_cat.super_food.items;
 
 import org.bukkit.attribute.Attribute;
 import org.bukkit.entity.Player;

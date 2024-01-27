@@ -1,4 +1,4 @@
-package org.coder_cat.super_food.commands;
+package me.coder_cat.super_food.commands;
 
 import org.bukkit.Location;
 import org.bukkit.command.Command;

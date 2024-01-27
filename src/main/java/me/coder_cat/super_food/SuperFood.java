@@ -1,11 +1,9 @@
-package org.coder_cat.super_food;
+package me.coder_cat.super_food;
 
 import org.bukkit.Material;
 import org.bukkit.NamespacedKey;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.plugin.java.JavaPlugin;
-import org.coder_cat.super_food.commands.RandomTeleport;
-import org.coder_cat.super_food.items.HeartCake;
 
 import io.github.thebusybiscuit.slimefun4.api.SlimefunAddon;
 import io.github.thebusybiscuit.slimefun4.api.items.ItemGroup;
@@ -13,6 +11,8 @@ import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItemStack;
 import io.github.thebusybiscuit.slimefun4.api.recipes.RecipeType;
 import io.github.thebusybiscuit.slimefun4.api.researches.Research;
 import io.github.thebusybiscuit.slimefun4.libraries.dough.items.CustomItemStack;
+import me.coder_cat.super_food.commands.RandomTeleport;
+import me.coder_cat.super_food.items.HeartCake;
 
 public final class SuperFood extends JavaPlugin implements SlimefunAddon {
 
