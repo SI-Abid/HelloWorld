@@ -4,12 +4,12 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>org.coder_cat</groupId>
-  <artifactId>HelloWorld</artifactId>
+  <groupId>org.Coder_Cat</groupId>
+  <artifactId>super_food</artifactId>
   <version>1.0-SNAPSHOT</version>
   <packaging>jar</packaging>
 
-  <name>HelloWorld</name>
+  <name>Super Food</name>
 
   <properties>
     <java.version>1.8</java.version>

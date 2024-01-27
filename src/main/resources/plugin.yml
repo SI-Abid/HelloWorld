@@ -1,4 +1,9 @@
-name: HelloWorld
-version: '1.0.1'
-main: org.coder_cat.helloworld.HelloWorld
+name: Super Food
+version: '${project.version}'
+main: org.coder_cat.super_food.SuperFood
 api-version: '1.20'
+
+commands:
+  rtp:
+    description: Teleports you to a random location
+    usage: /rtp
