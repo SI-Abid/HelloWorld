@@ -1,5 +1,7 @@
 package me.coder_cat.super_food;
 
+import javax.annotation.Nonnull;
+
 import org.bukkit.Material;
 import org.bukkit.NamespacedKey;
 import org.bukkit.inventory.ItemStack;
@@ -13,6 +15,7 @@ import io.github.thebusybiscuit.slimefun4.api.researches.Research;
 import io.github.thebusybiscuit.slimefun4.libraries.dough.items.CustomItemStack;
 import me.coder_cat.super_food.commands.RandomTeleport;
 import me.coder_cat.super_food.items.HeartCake;
+import me.coder_cat.utils.TeleportUtils;
 
 public final class SuperFood extends JavaPlugin implements SlimefunAddon {
 
@@ -22,6 +25,11 @@ public final class SuperFood extends JavaPlugin implements SlimefunAddon {
         getLogger().info("Slimefun addon by coder_cat");
 
         getCommand("rtp").setExecutor(new RandomTeleport());
+        TeleportUtils.setPlugin(this);
+
+        // Setup Config
+        getConfig().options().copyDefaults();
+        saveDefaultConfig();
 
         NamespacedKey categoryId = new NamespacedKey(this, "super_food");
         CustomItemStack categoryItem = new CustomItemStack(Material.CAKE, "&4Super Food");
@@ -53,12 +61,13 @@ public final class SuperFood extends JavaPlugin implements SlimefunAddon {
     }
 
     @Override
+    @Nonnull
     public JavaPlugin getJavaPlugin() {
         return this;
     }
 
     @Override
     public String getBugTrackerURL() {
-        return null;
+        return "https://github.com/SI-Abid/SuperFood/issues";
     }
 }
