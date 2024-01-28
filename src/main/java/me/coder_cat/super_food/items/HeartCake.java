@@ -34,7 +34,7 @@ public class HeartCake extends SlimefunItem {
         double currentMaxHealth = player.getAttribute(Attribute.GENERIC_MAX_HEALTH).getValue();
 
         // Increase max health by 1 (adjust as needed)
-        double newMaxHealth = currentMaxHealth + 1;
+        double newMaxHealth = currentMaxHealth + 2;
 
         // Set the new max health for the player
         player.getAttribute(Attribute.GENERIC_MAX_HEALTH).setBaseValue(newMaxHealth);
